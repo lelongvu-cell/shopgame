@@ -1,6 +1,9 @@
 import './style.css'
 
 import Navigo from "navigo";
+import home from './pages/home';
+import about from './pages/about';
+import product from './pages/product';
 
 const myApp = document.querySelector("#app");
 
@@ -11,13 +14,13 @@ const print = (content) =>{
 };
 router.on({
   "/":() =>{
-    print()
+    print(home.render());
   },
   "/about":() =>{
-    console.log("About page");
+    print(about.render());
   },
   "/product":() =>{
-    
+    print(product.render());
   }
 })
 router.resolve();
