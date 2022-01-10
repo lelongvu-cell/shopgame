@@ -1,6 +1,23 @@
 import './style.css'
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+import Navigo from "navigo";
+
+const myApp = document.querySelector("#app");
+
+const router = new Navigo("/");
+
+const print = (content) =>{
+  myApp.innerHTML = content;
+};
+router.on({
+  "/":() =>{
+    print()
+  },
+  "/about":() =>{
+    console.log("About page");
+  },
+  "/product":() =>{
+    
+  }
+})
+router.resolve();
